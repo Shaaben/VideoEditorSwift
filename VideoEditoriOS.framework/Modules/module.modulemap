@@ -1,0 +1,11 @@
+framework module VideoEditoriOS {
+  umbrella header "VideoEditoriOS.h"
+
+  export *
+  module * { export * }
+}
+
+module VideoEditoriOS.Swift {
+    header "VideoEditoriOS-Swift.h"
+    requires objc
+}
