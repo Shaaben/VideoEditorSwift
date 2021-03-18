@@ -192,6 +192,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import AssetsPickerViewController;
 @import CoreGraphics;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -212,12 +213,114 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class NSBundle;
 @class NSCoder;
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS15AnchorPointView")
+@interface AnchorPointView : UIView
+@property (nonatomic) IBInspectable BOOL showAnchorPoint;
+@property (nonatomic) IBInspectable CGPoint anchorPoint;
+- (void)drawRect:(CGRect)rect;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIWindow;
+@class UIApplication;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS11AppDelegate") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, strong) UIWindow * _Nullable window;
+- (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIColor;
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS8CardView")
+@interface CardView : UIView
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable NSInteger shadowOffsetWidth;
+@property (nonatomic) IBInspectable NSInteger shadowOffsetHeight;
+@property (nonatomic, strong) IBInspectable UIColor * _Nullable shadowColor;
+@property (nonatomic) IBInspectable float shadowOpacity;
+@property (nonatomic) IBInspectable BOOL cardView;
+- (void)layoutSubviews;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull firstColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull secondColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull therdColor;
+@property (nonatomic) IBInspectable BOOL horizontalGradient;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImageView;
+@class UILabel;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS15GalleryItemCell")
+@interface GalleryItemCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imgItem;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblCreatedDate;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS12GradientView")
+@interface GradientView : UIView
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull topColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull bottomColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull shadowColor;
+@property (nonatomic) IBInspectable CGFloat shadowX;
+@property (nonatomic) IBInspectable CGFloat shadowY;
+@property (nonatomic) IBInspectable CGFloat shadowBlur;
+@property (nonatomic) IBInspectable CGFloat startPointX;
+@property (nonatomic) IBInspectable CGFloat startPointY;
+@property (nonatomic) IBInspectable CGFloat endPointX;
+@property (nonatomic) IBInspectable CGFloat endPointY;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS8HomeCell")
+@interface HomeCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet CardView * _Null_unspecified viewForCellBg;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblForVideoEditName;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imgForUtilityIcon;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+@class UIButton;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC14VideoEditoriOS18HomeViewController")
 @interface HomeViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UICollectionView * _Null_unspecified collectionView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoPreviewView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoPreviewBaseView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified switchCameraBtn;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified headerLabel;
 - (void)viewDidLoad;
+- (IBAction)privacyPolicyBtn:(id _Nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)onPressCancelVideoCapture;
+- (IBAction)onPressSwitchCamera:(UIButton * _Nonnull)sender;
+- (IBAction)startCapture:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -238,8 +341,6 @@ SWIFT_CLASS("_TtC14VideoEditoriOS18HomeViewController")
 @end
 
 
-@class UICollectionView;
-@class UICollectionViewCell;
 @class UICollectionViewLayout;
 
 @interface HomeViewController (SWIFT_EXTENSION(VideoEditoriOS)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -253,7 +354,481 @@ SWIFT_CLASS("_TtC14VideoEditoriOS18HomeViewController")
 @end
 
 
+SWIFT_CLASS("_TtC14VideoEditoriOS22MergeVideoAddVideoCell")
+@interface MergeVideoAddVideoCell : UICollectionViewCell
+- (IBAction)onPressAddVideo:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
 
+
+SWIFT_CLASS("_TtC14VideoEditoriOS14MergeVideoCell")
+@interface MergeVideoCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imageView;
+- (void)awakeFromNib;
+- (IBAction)onPressRemoveVideo:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UISegmentedControl;
+@class NSString;
+@class NSError;
+@class UILongPressGestureRecognizer;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS24MergeVideoViewController")
+@interface MergeVideoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+@property (nonatomic, weak) IBOutlet UICollectionView * _Null_unspecified collectionView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified viewSelectedVideos;
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentVideoQuality;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressSegmentValueChanged:(UISegmentedControl * _Nonnull)sender;
+- (void)handleLongGestureWithLongPress:(UILongPressGestureRecognizer * _Nonnull)longPress;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface MergeVideoViewController (SWIFT_EXTENSION(VideoEditoriOS)) <AssetsPickerViewControllerDelegate>
+- (void)assetsPickerWithController:(AssetsPickerViewController * _Nonnull)controller selected:(NSArray<PHAsset *> * _Nonnull)assets;
+- (BOOL)assetsPickerWithController:(AssetsPickerViewController * _Nonnull)controller shouldSelect:(PHAsset * _Nonnull)asset at:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+@interface MergeVideoViewController (SWIFT_EXTENSION(VideoEditoriOS)) <UICollectionViewDataSource, UICollectionViewDelegate>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (BOOL)collectionView:(UICollectionView * _Nonnull)collectionView canMoveItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView moveItemAtIndexPath:(NSIndexPath * _Nonnull)sourceIndexPath toIndexPath:(NSIndexPath * _Nonnull)destinationIndexPath;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS26ReverseVideoViewController")
+@interface ReverseVideoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS22SaveItemCollectionCell")
+@interface SaveItemCollectionCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imgForSaveItemPicture;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified btnForShareSaveItem;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified btnForAudioStartStop;
+- (void)awakeFromNib;
+- (IBAction)btnForPlayAudio:(UIButton * _Nonnull)sender;
+- (IBAction)btnShareForData:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS23SaveItemCollectionModel")
+@interface SaveItemCollectionModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class NSLayoutConstraint;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS32SaveItemCollectionViewController")
+@interface SaveItemCollectionViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified previewImgView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified previewSaveItemImageView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified noDataPromptLabel;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified editBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified deleteBtn;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Null_unspecified heightOfViewEditingBtns;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)closeBtn:(id _Nonnull)sender;
+- (IBAction)btnCancelPreview:(UIButton * _Nonnull)sender;
+- (IBAction)btnForSharePreview:(UIButton * _Nonnull)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (IBAction)onPressEdit:(UIButton * _Nullable)sender;
+- (IBAction)onPressDeleteAll:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class AVAudioPlayer;
+
+@interface SaveItemCollectionViewController (SWIFT_EXTENSION(VideoEditoriOS)) <AVAudioPlayerDelegate>
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer * _Nonnull)player successfully:(BOOL)flag;
+@end
+
+
+@class UITableViewRowAction;
+
+@interface SaveItemCollectionViewController (SWIFT_EXTENSION(VideoEditoriOS)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (NSArray<UITableViewRowAction *> * _Nullable)tableView:(UITableView * _Nonnull)tableView editActionsForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS19SaveItemGalleryCell")
+@interface SaveItemGalleryCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblForSaveFunctionalityName;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imgForUtilityIcon;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS29SaveItemGalleryViewController")
+@interface SaveItemGalleryViewController : UIViewController
+- (void)viewDidLoad;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SaveItemGalleryViewController (SWIFT_EXTENSION(VideoEditoriOS)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UIStepper;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS27SlowFastVideoViewController")
+@interface SlowFastVideoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified scaleSpeedLabel;
+@property (nonatomic, strong) IBOutlet UIStepper * _Null_unspecified stepper;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified videoSpeedControlsView;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressSegment:(UISegmentedControl * _Nonnull)sender;
+- (IBAction)onPressStepper:(UIStepper * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class TrimmerView;
+@class FLAnimatedImageView;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS21TrimmerViewController")
+@interface TrimmerViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet TrimmerView * _Null_unspecified trimmerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, strong) IBOutlet FLAnimatedImageView * _Null_unspecified loadPreviewImageView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified gifBtn;
+- (void)viewDidLoad;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressGIF:(UIButton * _Nullable)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)onPlaybackTimeChecker;
+- (void)didFinishAnimatingImageView;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface TrimmerViewController (SWIFT_EXTENSION(VideoEditoriOS)) <AVAudioPlayerDelegate>
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer * _Nonnull)player successfully:(BOOL)flag;
+@end
+
+@class UIGestureRecognizer;
+
+@interface TrimmerViewController (SWIFT_EXTENSION(VideoEditoriOS)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS15VUVideoFilterVC")
+@interface VUVideoFilterVC : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+@property (nonatomic, weak) IBOutlet UICollectionView * _Null_unspecified collectionView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified filtersView;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)closebtnAction:(id _Nonnull)sender;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface VUVideoFilterVC (SWIFT_EXTENSION(VideoEditoriOS)) <UICollectionViewDataSource, UICollectionViewDelegate>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS15VideoFilterCell")
+@interface VideoFilterCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified filterNameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified initialLabel;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS16VideoFilterModel")
+@interface VideoFilterModel : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS12VideoUtility")
+@interface VideoUtility : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC14VideoEditoriOS28WatermarkVideoViewController")
+@interface WatermarkVideoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified convertBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified playBtn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pauseBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified chooseImageBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified selectPositionBtn;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified watermarkImageView;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified selectedPositionLabel;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified topLeftBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified topRightBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified bottomLeftBtn;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified bottomRightBtn;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified selectPositionMainView;
+@property (nonatomic, strong) IBOutlet GradientView * _Null_unspecified selectPositionSubView;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified noImageSelectedLabel;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified watermarkControlsView;
+- (void)viewDidLoad;
+- (IBAction)closeAction:(id _Nonnull)sender;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)itemDidFinishPlaying:(NSNotification * _Nonnull)notification;
+- (void)videoWithVideoPath:(NSString * _Nonnull)videoPath didFinishSavingWithError:(NSError * _Nullable)error contextInfo:(id _Nonnull)info;
+- (IBAction)onPressConvertVideo:(UIButton * _Nonnull)sender;
+- (IBAction)onPressPlayVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressPauseVideo:(UIButton * _Nullable)sender;
+- (IBAction)onPressChooseImage:(UIButton * _Nonnull)sender;
+- (IBAction)onPressSelectPosition:(UIButton * _Nonnull)sender;
+- (IBAction)onPressCloseViewPosition:(UIButton * _Nonnull)sender;
+- (IBAction)onPressTopLeft:(UIButton * _Nonnull)sender;
+- (IBAction)onPressTopRight:(UIButton * _Nonnull)sender;
+- (IBAction)onPressBottomLeft:(UIButton * _Nonnull)sender;
+- (IBAction)onPressBottomRight:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class UITouch;
+@class UIEvent;
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS7XButton")
+@interface XButton : UIButton
+@property (nonatomic) IBInspectable BOOL animate;
+@property (nonatomic) IBInspectable double animateDelay;
+@property (nonatomic) IBInspectable NSInteger animateFrom;
+@property (nonatomic) IBInspectable BOOL popIn;
+@property (nonatomic) IBInspectable double popInDelay;
+- (void)drawRect:(CGRect)rect;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull borderColor;
+@property (nonatomic) IBInspectable CGFloat shadowOpacity;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull shadowColor;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+@property (nonatomic) IBInspectable CGSize shadowOffset;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull firstColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull secondColor;
+@property (nonatomic) IBInspectable BOOL horizontalGradient;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImage;
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS10XImageView")
+@interface XImageView : UIImageView
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull borderColor;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable double pulseDelay;
+@property (nonatomic) IBInspectable BOOL popIn;
+@property (nonatomic) IBInspectable double popInDelay;
+@property (nonatomic) IBInspectable CGFloat shadowOpacity;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull shadowColor;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+@property (nonatomic) IBInspectable CGFloat shadowOffsetY;
+- (void)layoutSubviews;
+- (void)drawRect:(CGRect)rect;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS6XLabel")
+@interface XLabel : UILabel
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull borderColor;
+@property (nonatomic) IBInspectable CGFloat rotationAngle;
+@property (nonatomic) IBInspectable CGFloat shadowOpacity;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull shadowColorLayer;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+@property (nonatomic) IBInspectable CGSize shadowOffsetLayer;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS19XRadialGradientView")
+@interface XRadialGradientView : UIView
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull InsideColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull OutsideColor;
+- (void)drawRect:(CGRect)rect;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS7XSlider")
+@interface XSlider : UISlider
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable thumbImage;
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable thumbHighlightedImage;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS10XTextField")
+@interface XTextField : UITextField
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable leftImage;
+@property (nonatomic) IBInspectable CGFloat leftPadding;
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable rightImage;
+@property (nonatomic) IBInspectable CGFloat rightPadding;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS5XView")
+@interface XView : UIView
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull firstColor;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull secondColor;
+@property (nonatomic) IBInspectable BOOL horizontalGradient;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull borderColor;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+@property (nonatomic) IBInspectable CGFloat shadowOpacity;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull shadowColor;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+@property (nonatomic) IBInspectable CGFloat shadowOffsetY;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14VideoEditoriOS15XViewController")
+@interface XViewController : UIViewController
+@property (nonatomic) IBInspectable BOOL lightStatusBar;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIVisualEffect;
+
+SWIFT_CLASS("_TtC14VideoEditoriOS17XVisualEffectView")
+@interface XVisualEffectView : UIVisualEffectView
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull borderColor;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+- (nonnull instancetype)initWithEffect:(UIVisualEffect * _Nullable)effect OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
