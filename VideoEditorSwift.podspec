@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 s.name          = "VideoEditorSwift"
-s.version       = "1.1.0"
+s.version       = "1.3.0"
 s.summary       = "VideoEditorSwift is a framework"
 s.homepage      = "https://github.com/Shaaben"
 s.description   = "VideoEditorSwift is a swift framework"
