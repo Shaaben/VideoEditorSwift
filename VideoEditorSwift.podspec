@@ -12,16 +12,18 @@ Pod::Spec.new do |s|
   #  can feel like a chore to fill in it's definitely to your advantage. The
   #  summary should be tweet-length, and the description more in depth.
   #
+s.platform      = :ios
 s.name          = "VideoEditorSwift"
-s.version       = "1.3.0"
+s.version       = "1.4.0"
 s.summary       = "VideoEditorSwift is a framework"
-s.homepage      = "https://github.com/Shaaben"
+s.homepage      = 'https://github.com/Shaaben/VideoEditorSwift'
 s.description   = "VideoEditorSwift is a swift framework"
 s.license       = { :type => "MIT", :file => "LICENSE" }
 s.author        = { "Mohamad" => "h.mohammad@smartmobiletech.org" }
 s.platform      = :ios, "12.0"
 s.ios.vendored_frameworks = 'VideoEditoriOS.framework'
-s.swift_version = "5"
-s.source        = { :git => "https://github.com/Shaaben/VideoEditorSwift.git", :tag => "#{s.version}" }
+s.swift_version = '5'
+s.ios.deployment_target = '12.0'
+s.source        = { :git => 'https://github.com/Shaaben/VideoEditorSwift.git', :tag => s.version.to_s }
 s.exclude_files = "Classes/Exclude"
 end
