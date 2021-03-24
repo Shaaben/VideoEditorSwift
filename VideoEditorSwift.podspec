@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios
   spec.name          = "VideoEditorSwift"
-  spec.version       = "1.4.3"
+  spec.version       = "1.4.4"
   spec.requires_arc = true
   spec.summary       = "VideoEditorSwift is a framework"
   spec.description   = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '12.0'
   spec.exclude_files = "Classes/Exclude"
   spec.ios.vendored_frameworks = 'VideoEditoriOS.framework'
-spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
