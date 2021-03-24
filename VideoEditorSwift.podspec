@@ -1,29 +1,24 @@
-#
-#  Be sure to run `pod spec lint VideoEditorSwift.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-Pod::Spec.new do |s|
-# ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-s.platform      = :ios
-s.name          = "VideoEditorSwift"
-s.version       = "1.4.0"
-s.summary       = "VideoEditorSwift is a framework"
-s.homepage      = 'https://github.com/Shaaben/VideoEditorSwift'
-s.description   = "VideoEditorSwift is a swift framework"
-s.license       = { :type => "MIT", :file => "LICENSE" }
-s.author        = { "Mohamad" => "h.mohammad@smartmobiletech.org" }
-s.platform      = :ios, "12.0"
-s.ios.vendored_frameworks = 'VideoEditoriOS.framework'
-s.swift_version = '5'
-s.ios.deployment_target = '12.0'
-s.source        = { :git => 'https://github.com/Shaaben/VideoEditorSwift.git', :tag => s.version.to_s }
-s.exclude_files = "Classes/Exclude"
+Pod::Spec.new do |spec|
+
+  spec.platform = :ios
+  spec.name          = "VideoEditorSwift"
+  spec.version       = "1.4.2"
+  spec.requires_arc = true
+  spec.summary       = "VideoEditorSwift is a framework"
+  spec.description   = <<-DESC
+  A much much longer description of VideoEditorSwift.
+                      DESC
+  spec.homepage      = 'https://github.com/Shaaben/VideoEditorSwift'
+  spec.license = { :type => "MIT", :file => "LICENSE" }
+  spec.author       = { "Mohamad" => "h.mohammad@smartmobiletech.org" }
+  spec.source = { 
+  :git => 'https://github.com/Shaaben/VideoEditorSwift.git', 
+    :tag => spec.version.to_s 
+}
+  spec.framework = 'UIKit'
+  spec.swift_version = '5'
+  spec.ios.deployment_target = '12.0'
+  spec.exclude_files = "Classes/Exclude"
+  spec.ios.vendored_frameworks = 'VideoEditoriOS.framework'
+
 end
