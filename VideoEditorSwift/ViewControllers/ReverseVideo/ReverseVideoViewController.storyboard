@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reverse Video View Controller-->
+        <scene sceneID="s6t-BU-tN0">
+            <objects>
+                <viewController storyboardIdentifier="ReverseVideoViewController" id="oT1-tB-32c" customClass="ReverseVideoViewController" customModule="VideoEditoriOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4TW-6c-oQB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-JG-P4l">
+                                <rect key="frame" x="0.0" y="38" width="320" height="255"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gj3-JG-P4l" secondAttribute="height" multiplier="64:51" id="QEo-aM-atg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-XO-VFz">
+                                <rect key="frame" x="16" y="24" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="1gD-sk-egZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="wgU-zH-MMa"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="oT1-tB-32c" eventType="touchUpInside" id="Ngo-EU-Bhs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWE-mj-zNJ">
+                                <rect key="frame" x="85" y="90.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Aoq-MS-VGs"/>
+                                    <constraint firstAttribute="width" constant="150" id="kKX-Xi-jyu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" image="PlayPurple"/>
+                                <connections>
+                                    <action selector="onPressPlayVideo:" destination="oT1-tB-32c" eventType="touchUpInside" id="dHc-rX-3Vy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-na-pVL">
+                                <rect key="frame" x="130" y="217" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1of-pg-VE5"/>
+                                    <constraint firstAttribute="height" constant="60" id="FjJ-AP-POw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" image="PausePurple"/>
+                                <connections>
+                                    <action selector="onPressPauseVideo:" destination="oT1-tB-32c" eventType="touchUpInside" id="WVf-tV-3bV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-Zu-0vb">
+                                <rect key="frame" x="16" y="423" width="288" height="45"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.1137254902" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Z9H-Rh-P5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <state key="normal" title="Reverse Video">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressConvertVideo:" destination="oT1-tB-32c" eventType="touchUpInside" id="ODq-hy-ygx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fvD-ql-Scm"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gj3-JG-P4l" firstAttribute="leading" secondItem="fvD-ql-Scm" secondAttribute="leading" id="5I2-o4-t5B"/>
+                            <constraint firstItem="uEU-XO-VFz" firstAttribute="top" secondItem="fvD-ql-Scm" secondAttribute="top" constant="24" id="8uP-XP-8iU"/>
+                            <constraint firstItem="gj3-JG-P4l" firstAttribute="top" secondItem="fvD-ql-Scm" secondAttribute="top" constant="38" id="AeH-ww-Uxv"/>
+                            <constraint firstItem="FUL-na-pVL" firstAttribute="centerX" secondItem="gj3-JG-P4l" secondAttribute="centerX" id="Ltz-17-P0M"/>
+                            <constraint firstItem="X9r-Zu-0vb" firstAttribute="top" secondItem="gj3-JG-P4l" secondAttribute="bottom" constant="130" id="Mpc-Q4-ekg"/>
+                            <constraint firstItem="uEU-XO-VFz" firstAttribute="leading" secondItem="fvD-ql-Scm" secondAttribute="leading" constant="16" id="QnC-Jo-GGx"/>
+                            <constraint firstItem="WWE-mj-zNJ" firstAttribute="centerY" secondItem="gj3-JG-P4l" secondAttribute="centerY" id="UQN-AQ-MDU"/>
+                            <constraint firstItem="fvD-ql-Scm" firstAttribute="trailing" secondItem="gj3-JG-P4l" secondAttribute="trailing" id="hnG-64-pau"/>
+                            <constraint firstItem="fvD-ql-Scm" firstAttribute="trailing" secondItem="X9r-Zu-0vb" secondAttribute="trailing" constant="16" id="kP5-VF-3Ni"/>
+                            <constraint firstItem="X9r-Zu-0vb" firstAttribute="leading" secondItem="fvD-ql-Scm" secondAttribute="leading" constant="16" id="mhE-4Y-yqA"/>
+                            <constraint firstItem="WWE-mj-zNJ" firstAttribute="centerX" secondItem="gj3-JG-P4l" secondAttribute="centerX" id="nDX-Q7-SPB"/>
+                            <constraint firstItem="FUL-na-pVL" firstAttribute="bottom" secondItem="gj3-JG-P4l" secondAttribute="bottom" constant="-16" id="y1Y-eC-RNJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="convertBtn" destination="X9r-Zu-0vb" id="Q6R-eU-X0E"/>
+                        <outlet property="pauseBtn" destination="FUL-na-pVL" id="cXB-mw-x97"/>
+                        <outlet property="playBtn" destination="WWE-mj-zNJ" id="PeM-N2-GJ3"/>
+                        <outlet property="playerView" destination="gj3-JG-P4l" id="hvP-iy-Yag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2H-p2-ya7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.25" y="124.64788732394366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PausePurple" width="64" height="64"/>
+        <image name="PlayPurple" width="64" height="64"/>
+        <image name="close" width="128" height="128"/>
+    </resources>
+</document>

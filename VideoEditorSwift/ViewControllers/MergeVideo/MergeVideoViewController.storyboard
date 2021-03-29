@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Merge Video View Controller-->
+        <scene sceneID="bAy-Gz-gsC">
+            <objects>
+                <viewController storyboardIdentifier="MergeVideoViewController" id="YKG-RF-PaI" customClass="MergeVideoViewController" customModule="VideoEditoriOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YiV-uw-Vw5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-y3-XAu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="493"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Df8-y3-XAu" secondAttribute="height" multiplier="414:493" id="FeU-So-ZYl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eb-cA-ELn">
+                                <rect key="frame" x="132" y="215.66666666666663" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1UK-F5-5S9"/>
+                                    <constraint firstAttribute="width" constant="150" id="DFN-F4-n0I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" image="PlayPurple"/>
+                                <connections>
+                                    <action selector="onPressPlayVideo:" destination="YKG-RF-PaI" eventType="touchUpInside" id="46G-iM-i2M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBt-LC-GSN">
+                                <rect key="frame" x="16" y="44" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FOV-1r-htk"/>
+                                    <constraint firstAttribute="width" constant="30" id="abe-cC-iD1"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="YKG-RF-PaI" eventType="touchUpInside" id="m2G-Hl-m7S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBs-kN-iAV">
+                                <rect key="frame" x="177" y="461" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="V0u-6D-X0a"/>
+                                    <constraint firstAttribute="height" constant="60" id="bJV-5g-mb0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" image="PausePurple"/>
+                                <connections>
+                                    <action selector="onPressPauseVideo:" destination="YKG-RF-PaI" eventType="touchUpInside" id="NI8-nr-ewF"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-5D-CE8">
+                                <rect key="frame" x="0.0" y="545" width="414" height="164"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Quality :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQk-qk-AnJ">
+                                        <rect key="frame" x="16" y="8" width="382" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-sw-6el">
+                                        <rect key="frame" x="16" y="37" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="Normal"/>
+                                            <segment title="Medium"/>
+                                            <segment title="High"/>
+                                        </segments>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="onPressSegmentValueChanged:" destination="YKG-RF-PaI" eventType="valueChanged" id="hmk-cX-xqb"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-2Q-C6u">
+                                        <rect key="frame" x="0.0" y="76" width="414" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="DJZ-02-kB2"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J7S-mF-1qt">
+                                            <size key="itemSize" width="80" height="80"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MergeVideoCell" id="bx8-so-4ey" customClass="MergeVideoCell" customModule="VideoEditoriOS" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="0.0" width="80" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-ek-NSn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRn-xK-edd">
+                                                            <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="jDf-PZ-BwB"/>
+                                                                <constraint firstAttribute="height" constant="30" id="nWE-CG-Czs"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Close-Circle"/>
+                                                            <connections>
+                                                                <action selector="onPressRemoveVideo:" destination="bx8-so-4ey" eventType="touchUpInside" id="ZdY-aa-jeX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="U7t-ek-NSn" secondAttribute="bottom" id="A50-5D-PfB"/>
+                                                    <constraint firstItem="U7t-ek-NSn" firstAttribute="leading" secondItem="bx8-so-4ey" secondAttribute="leading" id="C0v-H9-KX6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lRn-xK-edd" secondAttribute="trailing" id="HbW-bw-9pz"/>
+                                                    <constraint firstItem="U7t-ek-NSn" firstAttribute="trailing" secondItem="bx8-so-4ey" secondAttribute="trailing" id="bF3-N9-4Se"/>
+                                                    <constraint firstItem="lRn-xK-edd" firstAttribute="top" secondItem="bx8-so-4ey" secondAttribute="top" id="hEI-JZ-YBj"/>
+                                                    <constraint firstItem="U7t-ek-NSn" firstAttribute="top" secondItem="bx8-so-4ey" secondAttribute="top" id="sSK-eG-Vdd"/>
+                                                </constraints>
+                                                <size key="customSize" width="80" height="80"/>
+                                                <connections>
+                                                    <outlet property="imageView" destination="U7t-ek-NSn" id="jhe-2m-ozM"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MergeVideoAddVideoCell" id="5Bc-po-Kbc" customClass="MergeVideoAddVideoCell" customModule="VideoEditoriOS" customModuleProvider="target">
+                                                <rect key="frame" x="106" y="0.0" width="80" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-nh-twS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <state key="normal" image="add_video"/>
+                                                            <connections>
+                                                                <action selector="onPressAddVideo:" destination="5Bc-po-Kbc" eventType="touchUpInside" id="KMT-h2-25o"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="EvH-nh-twS" firstAttribute="top" secondItem="5Bc-po-Kbc" secondAttribute="top" id="Bnq-m9-TNO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EvH-nh-twS" secondAttribute="trailing" id="VUw-Ps-pWo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EvH-nh-twS" secondAttribute="bottom" id="xNi-ld-4mS"/>
+                                                    <constraint firstItem="EvH-nh-twS" firstAttribute="leading" secondItem="5Bc-po-Kbc" secondAttribute="leading" id="xzh-bm-yWl"/>
+                                                </constraints>
+                                                <size key="customSize" width="80" height="80"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="YKG-RF-PaI" id="8Z0-5i-gGa"/>
+                                            <outlet property="delegate" destination="YKG-RF-PaI" id="2fn-bM-lb7"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WkG-2Q-C6u" secondAttribute="bottom" constant="8" id="833-Nr-c52"/>
+                                    <constraint firstItem="WkG-2Q-C6u" firstAttribute="leading" secondItem="tSV-5D-CE8" secondAttribute="leading" id="BFt-i5-k2k"/>
+                                    <constraint firstItem="BQk-qk-AnJ" firstAttribute="top" secondItem="tSV-5D-CE8" secondAttribute="top" constant="8" id="JgA-pW-ylN"/>
+                                    <constraint firstItem="WkG-2Q-C6u" firstAttribute="top" secondItem="HLB-sw-6el" secondAttribute="bottom" constant="8" id="NQi-rw-tvV"/>
+                                    <constraint firstItem="HLB-sw-6el" firstAttribute="top" secondItem="BQk-qk-AnJ" secondAttribute="bottom" constant="8" id="TlX-OB-baR"/>
+                                    <constraint firstItem="BQk-qk-AnJ" firstAttribute="leading" secondItem="tSV-5D-CE8" secondAttribute="leading" constant="16" id="Wqy-QI-rla"/>
+                                    <constraint firstItem="HLB-sw-6el" firstAttribute="leading" secondItem="tSV-5D-CE8" secondAttribute="leading" constant="16" id="fcT-0j-kBD"/>
+                                    <constraint firstAttribute="trailing" secondItem="WkG-2Q-C6u" secondAttribute="trailing" id="gMw-dv-qjt"/>
+                                    <constraint firstAttribute="trailing" secondItem="HLB-sw-6el" secondAttribute="trailing" constant="16" id="j9l-Ns-NCX"/>
+                                    <constraint firstAttribute="trailing" secondItem="BQk-qk-AnJ" secondAttribute="trailing" constant="16" id="qJj-Ip-nLC"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRT-wZ-BDE">
+                                <rect key="frame" x="16" y="717" width="382" height="45"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.1137254902" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="mMs-mI-ADa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <state key="normal" title="Merge Videos">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressConvertVideo:" destination="YKG-RF-PaI" eventType="touchUpInside" id="a4a-ud-ZLZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="msC-7R-yvW"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bBt-LC-GSN" firstAttribute="leading" secondItem="msC-7R-yvW" secondAttribute="leading" constant="16" id="2Rw-HQ-7wz"/>
+                            <constraint firstItem="tSV-5D-CE8" firstAttribute="leading" secondItem="msC-7R-yvW" secondAttribute="leading" id="2bi-GY-mNn"/>
+                            <constraint firstItem="0eb-cA-ELn" firstAttribute="centerX" secondItem="Df8-y3-XAu" secondAttribute="centerX" id="3wK-h4-VAb"/>
+                            <constraint firstItem="sRT-wZ-BDE" firstAttribute="top" secondItem="tSV-5D-CE8" secondAttribute="bottom" constant="8" id="DLv-Gs-YXo"/>
+                            <constraint firstItem="msC-7R-yvW" firstAttribute="trailing" secondItem="sRT-wZ-BDE" secondAttribute="trailing" constant="16" id="O7I-We-tYe"/>
+                            <constraint firstItem="bBt-LC-GSN" firstAttribute="top" secondItem="msC-7R-yvW" secondAttribute="top" id="S4K-go-qPl"/>
+                            <constraint firstItem="tSV-5D-CE8" firstAttribute="top" secondItem="Df8-y3-XAu" secondAttribute="bottom" constant="8" id="XuK-hi-hJf"/>
+                            <constraint firstItem="sRT-wZ-BDE" firstAttribute="leading" secondItem="msC-7R-yvW" secondAttribute="leading" constant="16" id="aKW-uC-jH0"/>
+                            <constraint firstItem="Df8-y3-XAu" firstAttribute="leading" secondItem="msC-7R-yvW" secondAttribute="leading" id="fTZ-Rd-CNh"/>
+                            <constraint firstItem="0eb-cA-ELn" firstAttribute="centerY" secondItem="Df8-y3-XAu" secondAttribute="centerY" id="ftf-bY-nJ5"/>
+                            <constraint firstItem="msC-7R-yvW" firstAttribute="trailing" secondItem="Df8-y3-XAu" secondAttribute="trailing" id="gAP-Fi-Rx4"/>
+                            <constraint firstItem="msC-7R-yvW" firstAttribute="trailing" secondItem="tSV-5D-CE8" secondAttribute="trailing" id="gYS-co-MXC"/>
+                            <constraint firstItem="eBs-kN-iAV" firstAttribute="bottom" secondItem="Df8-y3-XAu" secondAttribute="bottom" constant="-16" id="jRS-nk-1m9"/>
+                            <constraint firstItem="Df8-y3-XAu" firstAttribute="top" secondItem="msC-7R-yvW" secondAttribute="top" id="o2w-O6-4k2"/>
+                            <constraint firstItem="eBs-kN-iAV" firstAttribute="centerX" secondItem="Df8-y3-XAu" secondAttribute="centerX" id="xNG-HC-BtI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="WkG-2Q-C6u" id="f2E-M8-GHp"/>
+                        <outlet property="convertBtn" destination="sRT-wZ-BDE" id="5oM-xF-biE"/>
+                        <outlet property="pauseBtn" destination="eBs-kN-iAV" id="Txr-1M-BsA"/>
+                        <outlet property="playBtn" destination="0eb-cA-ELn" id="ybM-tq-cHA"/>
+                        <outlet property="playerView" destination="Df8-y3-XAu" id="qu3-iw-jRq"/>
+                        <outlet property="segmentVideoQuality" destination="HLB-sw-6el" id="YnA-2I-ThV"/>
+                        <outlet property="viewSelectedVideos" destination="tSV-5D-CE8" id="SHW-r1-j7b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czp-ep-fDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539.13043478260875" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Close-Circle" width="30" height="30"/>
+        <image name="PausePurple" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="PlayPurple" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="add_video" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="close" width="128" height="128"/>
+    </resources>
+</document>
