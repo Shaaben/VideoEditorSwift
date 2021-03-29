@@ -22,8 +22,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'PryntTrimmerView'
   spec.dependency 'PKHUD'
   spec.dependency 'AssetsPickerViewController'
-  spec.source_files  = "VideoEditorSwift/*.{swift}"
-  spec.resources = "VideoEditorSwift/*.{storyboard,xib,xcassets,lproj,png}"
+  spec.source_files  = "VideoEditorSwift/**/*.{swift}"
+  spec.resources = "VideoEditorSwift/**/*.{storyboard,xib,xcassets,lproj,png}"
   spec.swift_version = '5'
   spec.ios.deployment_target = '12.0'
 
